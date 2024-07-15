@@ -1,0 +1,9 @@
+<article>
+    <h1>{{task()!.title | uppercase}}</h1>
+    <time datetime="">{{task()!.date | date:'short'}}</time>
+    <h3>{{task()!.summary}}</h3>
+    <p class="actions"> 
+        <button (click)="completeTask()">complete</button>
+        <button (click)="updateTask()">update</button>
+    </p>
+</article>

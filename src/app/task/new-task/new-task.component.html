@@ -1,0 +1,28 @@
+<div class="backdrop" (click)="closDialog()"></div>
+<dialog open>
+    <h1>add Task</h1>
+    <form (ngSubmit)="submitTask()">
+        <p>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" [(ngModel)]="task().title">
+        </p>
+        <p>
+            <label for="suymmary">Suymmary</label>
+            <textarea id="suymmary" name="suymmary" rows="5" [(ngModel)]="task().summary"></textarea>
+            <!-- <input type="text"  name="suymmary"> -->
+        </p>
+        <p>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" [(ngModel)]="task().date">
+        </p>
+        <p class="actions">
+            <button type="button" (click)="closDialog()">cancel</button>
+            @if (update()) {
+            <button type="submit">update</button>
+            }
+            @else {
+            <button type="submit">create</button>
+            }
+        </p>
+    </form>
+</dialog>

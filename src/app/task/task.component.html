@@ -1,0 +1,19 @@
+<section id="tasks">
+    @if (showdialog) {
+        <app-new-task (close)="closDialog()" (add)="submitTask($event)" [update]="update" [task]="task"></app-new-task>
+    }
+    <header>
+        <h2>{{name}}'s Task</h2>
+
+        <menu>
+            <button (click)="addTask()"> add task</button>
+        </menu>
+    </header>
+    <ul>
+        @for (task of selectedUser; track task.id) {
+        <li>
+            <app-tasks [task]="task" (complete)="completeTask($event)" (update)="updateTask($event)"></app-tasks>
+        </li>
+        }
+    </ul>
+</section>

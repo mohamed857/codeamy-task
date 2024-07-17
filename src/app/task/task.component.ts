@@ -57,8 +57,8 @@ export class TaskComponent {
     return this.tasks.filter((task) => task.userId === this.userId)
   }
   completeTask = (id: string) => {
-    this.tasks = this.tasks.filter((task) => task.id != id);
-    this.updateLocalStorage();
+    // this.tasks = this.tasks.filter((task) => task.id != id);
+    // this.updateLocalStorage();
   }
   updateTask = (task: data) => {
 

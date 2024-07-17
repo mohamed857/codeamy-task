@@ -3,7 +3,7 @@
     <time datetime="">{{task()!.date | date:'short'}}</time>
     <h3>{{task()!.summary}}</h3>
     <p class="actions"> 
-        <button (click)="completeTask()">complete</button>
+        <button (click)="completeTask()">{{completeText}}</button>
         <button (click)="updateTask()">update</button>
     </p>
 </article>
